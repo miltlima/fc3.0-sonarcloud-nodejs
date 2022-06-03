@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
+      - run: npm install
+      - run: npm run build --if-present
       - run: npm install jest @types/jest sonarqube-scanner --only=dev
       - run: npm run test
       - uses: actions/checkout@v2
